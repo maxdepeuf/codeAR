@@ -17,22 +17,23 @@
 	device-orientation-permission-ui="enabled: false" 
 	gesture-detector
   	id="scene"
-    raycaster="objects: .clickable"
-    emitevents="true"
-    cursor="fuse: false; rayOrigin: mouse;"
 	>
     <a-assets>
     <a-asset-item id="avatarModel" src="https://maxdepeuf.github.io/codeAR/model/pvt3.glb"></a-asset-item>
       </a-assets>
- <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0"
-	      class="clickable"
-      gesture-handler="minScale: 0.25; maxScale: 10">
+ <a-camera position="0 0 0" look-controls="enabled: false"
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
  <a-gltf-model 
 	rotation="0 0 0 " 
 	position="0 0 0.1" 
 	scale="1 1 1" 
 	src="#avatarModel"
+	class="clickable"
+      	gesture-handler="minScale: 0.25; maxScale: 10"
 	> </a-gltf-model>
       </a-entity>
  <a-entity camera></a-entity>
