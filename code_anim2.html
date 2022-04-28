@@ -9,23 +9,30 @@
     <script src="gesture-handler.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: https://maxdepeuf.github.io/codeAR/target/target.mind;"color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" gesture-detector>
-      <a-assets>
+    <a-scene 
+	mindar-image="imageTargetSrc: https://maxdepeuf.github.io/codeAR/target/target.mind;"
+	color-space="sRGB" 
+	renderer="colorManagement: true, physicallyCorrectLights"
+	vr-mode-ui="enabled: false" 
+	device-orientation-permission-ui="enabled: false" 
+	gesture-detector
+	raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+	>
+    <a-assets>
     <a-asset-item id="avatarModel" src="https://maxdepeuf.github.io/codeAR/model/pvt3.glb"></a-asset-item>
       </a-assets>
-      <a-camera position="0 0 0" look-controls="enabled: false"; raycaster="objects: .clickable"; cursor="fuse: false; rayOrigin: mouse;"></a-camera>
-      <a-entity 
-	mindar-image-target="targetIndex: 0" 
-	gltf-model="https://maxdepeuf.github.io/codeAR/model/pvt3.glb"
-	scale="1 1 1"
-	position="0 0 0"
-	rotation="0 0 0"
+<a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+ <a-gltf-model 
+	rotation="0 0 0 " 
+	position="0 0 0.1" 
+	scale="1 1 1" 
+	src="#avatarModel"
 	class="clickable"
         gesture-handler="minScale: 0.5; maxScale: 2"
 	>
-          <!-- <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="1 1 1" src="#avatarModel" -->
-          <!-- animation__1="property: rotation; to: 0 360 0; loop: true; dur: 10000; dir: alternate"; -->
-	  <!-- animation__2="property: position; to: 0 0.1 0.1; dur: 1000; loop: true; dir: alternate"; -->
       </a-entity>
     </a-scene>
   </body>
