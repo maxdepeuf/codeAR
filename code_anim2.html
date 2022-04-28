@@ -16,9 +16,6 @@
 	vr-mode-ui="enabled: false" 
 	device-orientation-permission-ui="enabled: false" 
 	gesture-detector
-	raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
 	>
     <a-assets>
     <a-asset-item id="avatarModel" src="https://maxdepeuf.github.io/codeAR/model/pvt3.glb"></a-asset-item>
@@ -30,8 +27,6 @@
 	position="0 0 0.1" 
 	scale="1 1 1" 
 	src="#avatarModel"
-	class="clickable"
-        gesture-handler="minScale: 0.5; maxScale: 2"
 	>
       </a-entity>
     </a-scene>
